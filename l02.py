@@ -52,23 +52,23 @@
 #     if ans.lower() == answer: print('Congrats!')
 
 
-# here to be anoter task
+Задача на колл-центр по-нормальному решается через дерево решений here to be anoter task
 
 
 # here
 
-x = int(input("Enter x:"))
-a = int(input("Enter a:"))
-
-b = (x**2 + 4*a**2 + 4*a*x)/(8*a**3)
-y = (2 + x/a)**3/b
-
-v1 = 8*(2*a+x)
-v2 = 8/(x+2*a)
-v3 = (x+2*a)/8
-v4 = 1/(8*(x+2*a))
-
-if y == v1: print("Answer is 1")
-if y == v2: print("Answer is 2")
-if y == v3: print("Answer is 3")
-if y == v4: print("Answer is 4")
+# x = int(input("Enter x:"))
+# a = int(input("Enter a:"))
+#
+# b = (x**2 + 4*a**2 + 4*a*x)/(8*a**3)
+# y = (2 + x/a)**3/b
+#
+# v1 = 8*(2*a+x)
+# v2 = 8/(x+2*a)
+# v3 = (x+2*a)/8
+# v4 = 1/(8*(x+2*a))
+#
+# if y == v1: print("Answer is 1")
+# if y == v2: print("Answer is 2")
+# if y == v3: print("Answer is 3")
+# if y == v4: print("Answer is 4")
