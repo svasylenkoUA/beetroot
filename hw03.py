@@ -1,7 +1,5 @@
 # task1
 
-
-
 a = input("Enter string:")
 
 if len(a) <= 1:
