@@ -50,13 +50,11 @@ print(lst2)
 print(res_lst)
 
 #Task 3
-i=1
+i=0
 lst=[]
 res_lst=[]
-while i<101:
-    lst.append(i)
-    i+=1
-i=0
+
+lst = list(range(1,101))
 
 while i<len(lst):
     if lst[i] % 7 == 0 and lst[i] % 5 != 0:
