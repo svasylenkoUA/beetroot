@@ -50,69 +50,61 @@
 # print(res_lst)
 #
 # #Task 3
-# i=0
-# lst=[]
-# res_lst=[]
-#
-# lst = list(range(1,101))
-#
-# while i<len(lst):
-#     if lst[i] % 7 == 0 and lst[i] % 5 != 0:
-#         res_lst.append(i)
-#     i+=1
-#
-# print(res_lst)
+
+res_lst = [i for i in range(0, 101,7) if i % 5 !=0]
+
+print(res_lst)
 
 #Additional tasks
-if __name__ == '__main__':
-
-    import random
-
-    # i = mx = mn = 0
-    # l=[]
-    # while i<10:
-    #     l.append(random.randint(1,100))
-    #     i +=1
-    #
-    # i=0
-    # mn = l[0]
-    # while i<len(l):
-    #     if l[i]>mx: mx = l[i]
-    #     if l[i] < mn: mn = l[i]
-    #     i +=1
-    #
-    # print(l)
-    # print(f'Min: {mn}, max: {mx}')
-    #
-    # # task 2
-    # exmpl = "Привіт"
-    # rr=''
-    # var1 = tuple((exmpl))
-    # var1 = var1[::2]
-    # var1 = ''.join(var1)
-    #
-    # assert var1 == "Пиі"
-    #
-    # #task 3
-    # ans = ''
-    # l=[]
-    # while ans != 'Q':
-    #     ans = input("Enter name: ")
-    #     if ans == 'Q': break
-    #     l.append(ans)
-    #
-    # l.sort()
-    # print(l)
-    # print(f"{l[0]} играет с {l[len(l)-1]}")
-    # print(f"{l[1]} играет с {l[len(l) - 2]}")
-    l=[]
-    for i in range(0,10,1):
-        l.append(i)
-    print(l)
-    i=0
-    while i<len(l)//2:
-        l[i], l[len(l)-i-1] = l[len(l)-i-1], l[i]
-        i+=1
-
-    print (l)
-
+# if __name__ == '__main__':
+#
+#     import random
+#
+#     # i = mx = mn = 0
+#     # l=[]
+#     # while i<10:
+#     #     l.append(random.randint(1,100))
+#     #     i +=1
+#     #
+#     # i=0
+#     # mn = l[0]
+#     # while i<len(l):
+#     #     if l[i]>mx: mx = l[i]
+#     #     if l[i] < mn: mn = l[i]
+#     #     i +=1
+#     #
+#     # print(l)
+#     # print(f'Min: {mn}, max: {mx}')
+#     #
+#     # # task 2
+#     # exmpl = "Привіт"
+#     # rr=''
+#     # var1 = tuple((exmpl))
+#     # var1 = var1[::2]
+#     # var1 = ''.join(var1)
+#     #
+#     # assert var1 == "Пиі"
+#     #
+#     # #task 3
+#     # ans = ''
+#     # l=[]
+#     # while ans != 'Q':
+#     #     ans = input("Enter name: ")
+#     #     if ans == 'Q': break
+#     #     l.append(ans)
+#     #
+#     # l.sort()
+#     # print(l)
+#     # print(f"{l[0]} играет с {l[len(l)-1]}")
+#     # print(f"{l[1]} играет с {l[len(l) - 2]}")
+#     l=[]
+#     for i in range(0,10,1):
+#         l.append(i)
+#     print(l)
+#     i=0
+#     while i<len(l)//2:
+#         l[i], l[len(l)-i-1] = l[len(l)-i-1], l[i]
+#         i+=1
+#
+#     print (l)
+#
