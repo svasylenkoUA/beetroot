@@ -44,9 +44,10 @@ if __name__ == '__main__':
 
         return res
 
-    #Task 3
 
     print(ttl_price(stock,prices))
+
+    # Task 3
 
     lst = [tuple((i, i**2)) for i in range(1,11,1)]
     print(lst)
