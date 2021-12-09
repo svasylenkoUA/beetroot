@@ -4,10 +4,14 @@ import os
 if __name__ == '__main__':
 
     def get_name(arr, uname, passw):
-        lst = arr[uname]
-        if uname==lst[1] and passw==lst[2]:
-            return lst[0]
-        else: return ("No such user")
+        try:
+            lst = arr[uname]
+            if uname==lst[1] and passw==lst[2]:
+                return lst[0]
+            else:
+                return "No such user"
+        except IndexError:
+            return ("No such user")
 
     os.chdir("cache")
 
@@ -28,7 +32,7 @@ if __name__ == '__main__':
             nm = input("Provide: Name;username;pass")
             lst = nm.rstrip().split(";")
             d[lst[1]] = lst
-            print(f'Hi {get_name(d, inp_n, inp_pass)}')
+            print(f'Hi {get_name(d, lst[1], lst[2])}')
 
     else:
         print(f'Hi {get_name(d, inp_n, inp_pass)}')
