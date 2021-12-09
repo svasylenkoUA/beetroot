@@ -27,10 +27,9 @@ if __name__ == '__main__':
     f = open("test.txt", encoding="utf8")
     d = {}
     for x in f:
-        #    print(x.split(";"))
         lst = x.rstrip().split(";")
         d[lst[1]] = lst
-    #print(d)
+    f.close()
 
     parser = argparse.ArgumentParser(description='Add new record')
     parser.add_argument('-record', type=str, help='Name;username;password')
@@ -43,7 +42,6 @@ if __name__ == '__main__':
     inp_pass = input("Your pass:")
 
 
-
     if get_name(d, inp_n,inp_pass) == "No such user":
         rr = input("No such user, shall we add? (Y, N)")
         if rr == "Y":
@@ -52,5 +50,3 @@ if __name__ == '__main__':
 
     else:
         print(f'Hi {get_name(d, inp_n, inp_pass)}')
-
-    f.close()
