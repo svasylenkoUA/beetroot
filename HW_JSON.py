@@ -52,7 +52,7 @@ def update_entry(data, inp1, inp2):
     return data
 
 while True:
-    inp = input("Would you like to: S - search, A - add, U - update, D - delete:")
+    inp = input("Would you like to: S - search, A - add, U - update, D - delete, Q - quit:")
 
     with open("phonebook.txt", "r+") as book:
         data = json.load(book)
@@ -67,6 +67,7 @@ while True:
         inp1 = input("Update data element: ")
         inp2 = input("Update data element to: ")
         pprint.pprint(update_entry(data, inp1, inp2))
+    elif inp == 'Q': break
     else:
         inp1 = input("Delete data element (name): ")
         pprint.pprint(delete_entry(data, inp1))
