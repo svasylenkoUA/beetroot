@@ -1,0 +1,35 @@
+{
+  "people": [
+    {
+      "name": "John Doe",
+      "city": "Denver",
+      "id": 1,
+      "email": "john.doe@gmail.com",
+      "phoneType": "Mobile",
+      "phoneNumbers": [
+        {
+          "number": "1-541-754-3010",
+          "type": "Mobile"
+        }
+      ]
+    },
+    {
+      "name": "John Smith",
+      "city": "Kiyv",
+      "id": 1,
+      "email": "john.smith@gmail.com",
+      "phoneType": "Mobile",
+      "phoneNumbers": [
+        {
+          "number": "1-111-111-111",
+          "type": "Landline"
+        },
+        {
+          "number": "1-222-222-222",
+          "type": "Mobile"
+        }
+      ]
+    }
+  ],
+  "numberOfContact": 2
+}
