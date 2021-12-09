@@ -10,8 +10,17 @@ if __name__ == '__main__':
                 return lst[0]
             else:
                 return "No such user"
-        except IndexError:
+        except (IndexError, KeyError):
             return ("No such user")
+
+
+    def add_user(arr):
+        nm = input("Provide Name;username;pass: ")
+        try:
+            lst = nm.rstrip().split(";")
+            d[lst[1]] = lst
+        except (IndexError, KeyError):
+            print("Wrong structure")
 
     os.chdir("cache")
 
@@ -23,15 +32,22 @@ if __name__ == '__main__':
         d[lst[1]] = lst
     #print(d)
 
+    parser = argparse.ArgumentParser(description='Add new record')
+    parser.add_argument('-record', type=str, help='Name;username;password')
+
+    args = parser.parse_args()
+
+    if args.record != "": add_user(args.record)
+
     inp_n = input("Your login:")
     inp_pass = input("Your pass:")
+
+
 
     if get_name(d, inp_n,inp_pass) == "No such user":
         rr = input("No such user, shall we add? (Y, N)")
         if rr == "Y":
-            nm = input("Provide: Name;username;pass")
-            lst = nm.rstrip().split(";")
-            d[lst[1]] = lst
+            add_user(d)
             print(f'Hi {get_name(d, lst[1], lst[2])}')
 
     else:

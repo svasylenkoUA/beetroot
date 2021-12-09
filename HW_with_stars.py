@@ -11,7 +11,10 @@ print(os.getcwd())
 
 for i in range(0,5):
     f = tempfile.NamedTemporaryFile(delete=False, suffix=".bak")
-    print(f.name)
+    with open(f.name, 'w') as file:
+        file.write(" ")
+
+#    print(f.name)
     print(os.listdir(path="."))
 
 
