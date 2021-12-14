@@ -37,6 +37,7 @@ class Library:
         self.name = name
         self.year = year
         self.author = author
+        self.books.append(name)
 
     def group_by_author(self, author):
         return self.books.sort(key = author.name)
@@ -73,8 +74,8 @@ class Book(Author):
         self.__repr__()
 
 
-a1 = Author("J. Smith", "UK", "Dec 2021", "")
-b1 = Book("Harry Potter", 2020, a1)
+author1 = Author("J. Smith", "UK", "Dec 2021", "")
+book1 = Book("Harry Potter", 2020, a1)
 Library.new_book("Harry Potter", 2020, a1)
 print("11")
 

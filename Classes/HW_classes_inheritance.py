@@ -1,57 +1,60 @@
-class Person:
-
-    def __init__(self, name, surname, gender, age):
-        self.name = name
-        self.surname = surname
-        self.gender = gender
-        self.age = age
-
-class Student(Person):
-
-    def __init__(self, name, surname, gender, age, grade, current_class):
-        super().__init__(name, surname, gender, age)
-        self.grade = grade
-        self.current_class = current_class
-
-class Teacher(Person):
-
-    def __init__(self, name, surname, gender, age, salary, title):
-        super().__init__(name, surname, gender, age)
-        self.salary = salary
-        self.title = title
-    def __repr__(self):
-        return (self.surname + " " +self.name + ": " + self.title + ", " + str(self.age))
-
-Teacher1 = Teacher("John", "Smith", "M", 36, 25000, "Math teacher")
-print(Teacher1)
-
-class Mathematician:
-
-    def __init__(self):
-        pass
-
-    def square_nums(self, lst):
-        return [x*x for x in lst]
-
-    def remove_positives(self, lst):
-        return [x for x in lst if x < 0]
-
-    def filter_leaps(self, lst):
-        return [x for x in lst if x % 4 == 0]
-
-m = Mathematician()
-
-assert m.square_nums([7, 11, 5, 4]) == [49, 121, 25, 16]
-assert m.remove_positives([26, -11, -8, 13, -90]) == [-11, -8, -90]
-assert m.filter_leaps([2001, 1884, 1995, 2003, 2020]) == [1884, 2020]
-
-
-class CustomException(Exception):
-
-    def __init__(self, msg):
-        f = open("log.txt", 'a')
-        f.write(msg)
-        f.close()
+# class Person:
+#
+#     def __init__(self, name, surname, gender, age):
+#         self.name = name
+#         self.surname = surname
+#         self.gender = gender
+#         self.age = age
+#
+# class Student(Person):
+#
+#     def __init__(self, name, surname, gender, age, school, pclass):
+#         super().__init__(name, surname, gender, age)
+#         self.school = school
+#         self.pclass = pclass
+#
+#
+# class Teacher(Person):
+#
+#     def __init__(self, name, surname, gender, age, salary, title):
+#         super().__init__(name, surname, gender, age)
+#         self.salary = salary
+#         self.title = title
+#
+#     def __repr__(self):
+#         return (self.surname + " " +self.name + ": " + self.title + ", " + str(self.age))
+#
+# t1 = Teacher("John", "Smith", "M", 40, 25000, "Head of Math")
+#
+# print(t1)
+#
+# class Mathematician:
+#
+#     def __init__(self):
+#         pass
+#
+#     def square_nums(self, lst):
+#         return [x*x for x in lst]
+#
+#     def remove_positives(self, lst):
+#         return [x for x in lst if x < 0]
+#
+#     def filter_leaps(self, lst):
+#         return [x for x in lst if x % 4 == 0]
+#
+# m = Mathematician()
+#
+# assert m.square_nums([7, 11, 5, 4]) == [49, 121, 25, 16]
+# assert m.remove_positives([26, -11, -8, 13, -90]) == [-11, -8, -90]
+# assert m.filter_leaps([2001, 1884, 1995, 2003, 2020]) == [1884, 2020]
+#
+#
+# class CustomException(Exception):
+#
+#     def __init__(self, msg):
+#         f = open("log.txt", 'a')
+#         f.write(msg)
+#         f.close()
 
 
 
