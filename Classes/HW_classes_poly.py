@@ -26,40 +26,91 @@ talk_function(d1)
 talk_function(c1)
 
 # ************************************************
+#
+# class Library:
+#     def __init__(self, name, books=[], authors = []):
+#         self.name = name
+#         self.authors = authors
+#         self.books = books
+#
+#     def new_book(self, name: str, year: int, author: Author):
+#         self.name = name
+#         self.year = year
+#         self.author = author
+#
+#     def group_by_author(self, author: Author):
+#         return self.books.sort(key = author.name)
+#
+#     def group_by_year(self, year: int):
+#         return self.books.sort(key = year)
+#
+# class Author:
+#
+#     def __init__(self, name, country, birthday, books=[]):
+#         self.name = name
+#         self.country = country
+#         self.birthday = birthday
+#         self.books = books
+#
+#     def __repr__(self):
+#         return self.name + " " + self.birtday + " " + self.country + ":" + self.books
+#
+#     def __str__(self):
+#         self.__repr__()
+#
+# class Book(Author):
+#     total_books = 0
+#     def __init__(self, name, year, author):
+#         super().__init__(name, country, birthday)
+#         self.name = name
+#         self.year = year
+#         self.author = author
+#         self.total_books +=1
+#
+#     def __repr__(self):
+#         return self.name + " " + self.author.name + " " + self.year
+#
+#     def __str__(self):
+#         self.__repr__()
+#
+#
+# a1 = Author("J. Smith", "UK", "Dec 2021", "")
 
-class Library:
-    def __init__(self):
-        pass
 
-    def new_book(self):
-        pass
-    def group_by_author(self):
-        pass
-    def group_by_year(self):
-        pass
+class Fraction:
+    def __init__(self, arg):
+        try:
+            self.value = float(arg)
+        except ValueError:
+            print("Value error")
 
-class Book(Author):
-    def __init__(self, name, year, author):
-        super().__init__(name, country, birthday):
-        self.name = name
-        self.year = year
-        self.author = author
+    def __add__(self, other):
+        try:
+            return self.value + float(other.value)
+        except ValueError:
+            print("Value error")
 
-    def __repr__(self):
-        return self.name + " " + self.author.name + " " + self.year
+    def __le__(self, other):
+        try:
+            return self.value - float(other.value)
+        except ValueError:
+            print("Value error")
 
-    def __str__(self):
-        self.__repr__()
+    def __mul__(self, other):
+        try:
+            return self.value * float(other.value)
+        except ValueError:
+            print("Value error")
 
-class Author:
-    def __init__(self, name, country, birthday, books=[]):
-        self.name = name
-        self.country = country
-        self.birthday = birthday
-        self.books = books
+    def __divmod__(self, other):
+        try:
+            return self.value / float(other.value)
+        except ValueError:
+            print("Value error")
 
-    def __repr__(self):
-        return self.name + " " + self.birtday + " " + self.country + ":" + self.books
 
-    def __str__(self):
-        self.__repr__()
+
+x = Fraction(1/2)
+y = Fraction(1/4)
+
+print(x+y)
