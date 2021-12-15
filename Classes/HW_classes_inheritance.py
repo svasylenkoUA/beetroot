@@ -57,53 +57,71 @@
 #         f.close()
 
 
-
 class Product:
-
-    def __init__(self, ptype, pname, price):
+    def __init__(self, ptype, pname, or_price):
         self.ptype = ptype
         self.pname = pname
-        self.price = price
+        self.price = or_price
+        self.full_price = 0
+
+class Margin:
+    def __init__(self):
+        self.rules = {
+            "Sport": 20,
+            "Food": 10
+        }
+
+    def calc_full_price(self, prod: Product):
+        return prod.price*(1 + self.rules[prod.ptype]/100)
+
+
+
+class ProductsInShop(Product):
+    def __init__(self, prod: Product):
+        self.product = prod
+        m = Margin()
+        prod.full_price = m.calc_full_price(prod)
+        self.quantity = 0
+
 
 class ProductStore:
+    MARGIN = 10
 
     def __init__(self):
-        self.items_in_store = {}
+        self.items_in_store = []
 
-    def add(self, product, amount):
-        try:
-            self.items_in_store[product.pname] = amount
-        except:
-            return "Error adding a product!"
+    def add(self, product, quantity):
+        p = ProductsInShop(product)
+        p.quantity = quantity
+        self.items_in_store.append(p)
 
-    def set_discount(self, identifier, percent, identifier_type='name'):
-        pass
+    def sell(self, product, quantity):
+        for i in self.items_in_store:
+            if i.product.pname == product:
+                i.quantity -= quantity
+            else:
+                continue
 
-    def sell(self, product_name, amount):
-        if self.items_in_store[product_name]<amount:
-            raise ValueError("Not enough products available!")
-        else:
-            self.items_in_store[product_name] -= amount
 
     def get_income(self):
-        pass
+        income = 0
+        for p in self.items_in_store:
+            income += (p.product.full_price - p.product.price)*p.quantity
+        return income
 
-    def get_all_products(self):
-        pass
-
-    def get_product_info(self, product_name):
-        if not product_name in self.items_in_store:
-            raise ValueError("No such product")
-        else:
-            return product_name, self.items_in_store.get(product_name)
+    def get_all_items(self):
+        return [p.product.pname+str(p.quantity) for p in self.items_in_store]
 
 
-p = Product('Sport', 'Football T-Shirt', 100)
-p2 = Product('Food', 'Ramen', 1.5)
-s = ProductStore()
+p1 = Product('Sport', 'Football T-Shirt', 100)
+p2 = Product('Food', 'Chicken', 80)
 
-s.add(p, 10)
-s.add(p2, 300)
-s.sell('Ramen', 10)
+ps1 = ProductStore()
 
-assert s.get_product_info('Ramen') == ("Ramen", 290)
+ps1.add(p1, 20)
+ps1.add(p2, 10)
+print(ps1.get_all_items())
+print(ps1.get_income())
+ps1.sell("Chicken", 5)
+print(ps1.get_all_items())
+print(ps1.get_income())
